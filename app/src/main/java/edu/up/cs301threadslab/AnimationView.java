@@ -82,7 +82,7 @@ public class AnimationView extends SurfaceView{
         }
         postInvalidate();
     }//draw
-
+//Dummy comment
     /** This method is called each time the seekbar's progress changes.  This will always be a
      *  value between 1 and 100.
      */
