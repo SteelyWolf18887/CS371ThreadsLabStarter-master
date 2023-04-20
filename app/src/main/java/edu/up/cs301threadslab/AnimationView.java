@@ -1,5 +1,7 @@
 package edu.up.cs301threadslab;
 
+import java.lang.Thread;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -23,6 +25,7 @@ public class AnimationView extends SurfaceView{
 
     //a list of the animations I'm currently displaying
     private ArrayList<Animation> anims = new ArrayList<Animation>();
+
 
     /** called by the ctors to initialize the variables I've added to this class */
     private void myInitializationStuff() {
@@ -81,6 +84,11 @@ public class AnimationView extends SurfaceView{
             anim.draw(canvas);
         }
         postInvalidate();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }//draw
 //Dummy comment
     /** This method is called each time the seekbar's progress changes.  This will always be a
